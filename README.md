@@ -1,1 +1,1 @@
-Alx system engineering devops
+Shell, basics
