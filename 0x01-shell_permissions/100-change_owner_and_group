@@ -1,4 +1,2 @@
-14 own and group
 #!/bin/bash
-chown vincent:staff ^
-chown vincent:staff .
+chown vincent:staff *
