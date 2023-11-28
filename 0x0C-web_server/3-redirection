@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Configure a new Nginx server so that /redirect_me is redirecting to another page.
+# The redirection must be a “301 Moved Permanently"
+
+sudo apt-get update
+sudo apt-get install -y nginx
+
+echo "Hello World!" | sudo tee /var/www/html/index.html
+new_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.tekbro.tech permanent;"
+sudo sed -i "s/server_name _;/$new_string/" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
