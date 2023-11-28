@@ -6,24 +6,16 @@
 
 sudo apt update
 sudo apt install -y nginx
-sudo service nginx start
 
-# Create a custom Nginx configuration file
-nginx_config="/etc/nginx/sites-available/my_custom_config"
 echo "server {
     listen 80 default_server;
     listen [::]:80 default_server;
-
     root /var/www/html;
     index index.html;
 
     location / {
-        return 200 \"Hello World!\";
+        return 200 "Hello World!";
     }
-}" | sudo tee "$nginx_config"
+}" | sudo tee /etc/nginx/sites-available/default > /dev/null
 
-# Create a symbolic link to enable the custom configuration
-sudo ln -s "$nginx_config" "/etc/nginx/sites-enabled/"
-
-# Reload Nginx configuration
-sudo service nginx reload
+sudo service nginx restart
