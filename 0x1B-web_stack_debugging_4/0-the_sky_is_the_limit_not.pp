@@ -1,4 +1,4 @@
-ky is the limit, let's bring that limit higher
+# Sky is the limit, let's bring that limit higher
 
 file { '/etc/default/nginx':
   ensure  => file,
