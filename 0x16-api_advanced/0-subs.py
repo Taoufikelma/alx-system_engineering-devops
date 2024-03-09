@@ -20,11 +20,3 @@ def number_of_subscribers(subreddit):
     else:
         # Return 0 if the subreddit is invalid or request failed
         return 0
-
-# Example usage:
-if __name__ == '__main__':
-    subreddit = "programming"
-    print(number_of_subscribers(subreddit))  # Output: 756024
-
-    subreddit = "this_is_a_fake_subreddit"
-    print(number_of_subscribers(subreddit))  # Output: 0
